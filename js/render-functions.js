@@ -1,6 +1,7 @@
-// Get the width of the screen
 var sizes = new Array();
 var width;
+
+//Initialization function
 function renderInit(){
 	width = $(window).width();
 }
@@ -44,7 +45,8 @@ function showContent(){
 }
 
 //Init an Interval
-var renderInterval = setInterval("showContent()",500);
+//Change the delay the way you want to, 5 seconds seems nice to me, little delay but it's okay
+var renderInterval = setInterval("showContent()",5000);
 
 //Show the content
 showContent();
