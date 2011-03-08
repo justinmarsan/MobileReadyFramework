@@ -10,7 +10,7 @@ MRF is a simple framework to make mobile ready websites. It's using CSS3 media-q
 Usage : Html
 ------------
 
-In order to prevent uneeded file loading, your html should only contain the Html elements needed for the mobile version. The elements used in the other version (Tablet, Desktop, Bigscreen, Hdtv) must be added between comments, see the (not created yet) demo.html file.
+In order to prevent uneeded file loading, your html should only contain the Html elements needed for the mobile version. The elements used in the other version (Tablet, Desktop, Bigscreen, Hdtv) must be added between comments, see the demo.html file.
 
 
 Usage : Css
@@ -47,7 +47,6 @@ A demo.html file will be created soon.
 To-do
 -----
 
- * Demo.html
  * Update JQuery version
 
 
