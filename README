@@ -6,10 +6,50 @@ What is that?
 
 MRF is a simple framework to make mobile ready websites. It's using CSS3 media-queries, JQuery, Lazy Loading, and is ready to be used with LESS (with few handy rules).
 
+
+Usage : Html
+------------
+
+In order to prevent uneeded file loading, your html should only contain the Html elements needed for the mobile version. The elements used in the other version (Tablet, Desktop, Bigscreen, Hdtv) must be added between comments, see the (not created yet) demo.html file.
+
+
+Usage : Css
+-----------
+
+All the files are separated and @imported in the style.css file. Of course it'll be a good idea to merge them when you're done.
+The names of the files are pretty straight forward and most of them contain comments.
+
+
+Usage : Less
+------------
+
+The /less folder contains the same files then the /css folder with some mixins already included.
+For more informations see http://lesscss.org/
+
+If you use Less.app ( http://incident57.com/less/ Mac only) the style.css will already be production ready due to the import. Highly recommended thought not necessary
+
+
+
+Usage : JS
+----------
+
+The Html page by default includes JQuery from Google CDN (version needs to be updated) with a local fallback, Modernizr, LazyRender and lazy-functions.js
+
+Lazy-functions.js is the important file here, it makes sure that the content of your Html files will be showed when needed. It's also contains an Interval, feel free to change the delay to whatever you want, default being to 5 secondes (5000ms). You can also disable to interval, this way the content will not be updated automatically if the user resizes his browser.
+
+
 More soon
 ---------
 
 A demo.html file will be created soon.
+
+
+To-do
+-----
+
+ * Demo.html
+ * Update JQuery version
+
 
 Credits
 -------
