@@ -1,1 +1,8 @@
-body{padding:0 auto;margin:0 auto;width:288px;}
+/* The mobile version is used by default */
+
+/*3 columns*/
+body {
+	padding:0 auto;
+	margin:0 auto;
+	width:288px;
+}

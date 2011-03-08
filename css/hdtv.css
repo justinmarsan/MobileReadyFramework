@@ -1,1 +1,8 @@
-@media only screen and (min-width: 1938px){body{padding:0 auto;margin:0 auto;width:1748px;}}
+/*18 columns*/
+@media only screen and (min-width: 1938px) {
+	body {
+		padding:0 auto;
+		margin:0 auto;
+		width:1748px;
+	}
+}

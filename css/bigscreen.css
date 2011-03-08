@@ -1,1 +1,8 @@
-@media only screen and (min-width: 1304px){body{padding:0 auto;margin:0 auto;width:1172px;}}
+/*12 columns*/
+@media only screen and (min-width: 1304px) {
+	body {
+		padding:0 auto;
+		margin:0 auto;
+		width:1172px;
+	}
+}
