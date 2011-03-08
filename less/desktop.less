@@ -1,0 +1,31 @@
+/*Desktop*/
+
+.col-num(@number: 1) {
+	@columns : 76px*@number;
+	@glitter : 20px*(@number - 1);
+	width: @columns+@glitter;
+	margin-right:10px;
+	margin-left:10px;
+}
+
+.col-num-padding(@number: 1) {
+	@columns : 76px*@number;
+	@glitter : 20px*(@number - 1);
+	width: @columns+@glitter - 20;
+	margin-right:10px;
+	margin-left:10px;
+	padding-right:10px;
+	padding-left:10px;
+}
+
+/*9 columns*/
+@media only screen and (min-width: 985px) {
+	body {
+		padding:0 auto;
+		margin:0 auto;
+		width:864px;
+	}
+	#example {
+		.col-num-padding(9);
+	}
+}
