@@ -38,12 +38,6 @@ The Html page by default includes JQuery from Google CDN (version needs to be up
 Lazy-functions.js is the important file here, it makes sure that the content of your Html files will be showed when needed. It's also contains an Interval, feel free to change the delay to whatever you want, default being to 5 secondes (5000ms). You can also disable to interval, this way the content will not be updated automatically if the user resizes his browser.
 
 
-More soon
----------
-
-A demo.html file will be created soon.
-
-
 To-do
 -----
 
