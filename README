@@ -1,1 +1,19 @@
-More informations coming soon...
+MobileReadyFramework
+====================
+
+What is that?
+-------------
+
+MRF is a simple framework to make mobile ready websites. It's using CSS3 media-queries, JQuery, Lazy Loading, and is ready to be used with LESS (with few handy rules).
+
+More soon
+---------
+
+A demo.html file will be created soon.
+
+Credits
+-------
+
+Made by Justin Marsan ( www.justinmarsan.com )
+Original idea form Kahlil Lechelt ( http://kahlillechelt.com/ )
+Discussion on Forrst ( http://forrst.com/posts/Perfect_All_Around_Bullet_Proof_CSS_Framework_F-gj4 )
