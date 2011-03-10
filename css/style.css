@@ -4,15 +4,7 @@
 @import "reset.css";
 /*Fontface*/
 @import "fontface.css";
-/*Mobile as Default*/
-@import "mobile.css";
-/*MQ -> Tablets*/
-@import "tablet.css";
-/*MQ -> Desktop*/
-@import "desktop.css";
-/*MQ -> Big Screen*/
-@import "bigscreen.css";
-/*MQ -> HDTV*/
-@import "hdtv.css";
+/*Layout*/
+@import "layout.css";
 /*Plugins*/
 @import "plugins.css";
