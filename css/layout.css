@@ -1,0 +1,57 @@
+/** Layout **/
+/* I suggest you only define the variations of sizes of the elements and use the @imports for the rest of the styling */
+
+/*Mobile as Default*/
+/*3 columns*/
+body {
+	padding:0 auto;
+	margin:0 auto;
+	width:288px;
+}
+@import "mobile.css";
+
+
+/*MQ -> Tablets*/
+/*6 columns*/
+@media only screen and (min-width: 667px) {
+	body {
+		padding:0 auto;
+		margin:0 auto;
+		width:576px;
+	}
+	
+	@import "tablet.css";
+}
+/*MQ -> Desktop*/
+/*9 columns*/
+@media only screen and (min-width: 985px) {
+	body {
+		padding:0 auto;
+		margin:0 auto;
+		width:864px;
+	}
+	
+	@import "desktop.css";
+}
+/*MQ -> Big Screen*/
+/*12 columns*/
+@media only screen and (min-width: 1304px) {
+	body {
+		padding:0 auto;
+		margin:0 auto;
+		width:1172px;
+	}
+	
+	@import "bigscreen.css";
+}
+/*MQ -> HDTV*/
+/*18 columns*/
+@media only screen and (min-width: 1938px) {
+	body {
+		padding:0 auto;
+		margin:0 auto;
+		width:1748px;
+	}
+	
+	@import "hdtv.css";
+}
