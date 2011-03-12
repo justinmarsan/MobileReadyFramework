@@ -31,6 +31,14 @@ body {
 	padding:0 auto;
 	margin:0 auto;
 	width:288px;
+	
+	.mobile {
+		display:block;
+	}
+	
+	.tablet, .desktop, .bigscreen, .hdtv {
+		display:none;
+	}
 }
 @import "mobile";
 
@@ -42,10 +50,17 @@ body {
 		padding:0 auto;
 		margin:0 auto;
 		width:576px;
+
+		.tablet {
+			display:block;
+		}
+
+		.mobile, .desktop, .bigscreen, .hdtv {
+			display:none;
+		}
 	}
-	
-	@import "tablet";
 }
+@import "tablet";
 /*MQ -> Desktop*/
 /*9 columns*/
 @media only screen and (min-width: 985px) {
@@ -53,10 +68,17 @@ body {
 		padding:0 auto;
 		margin:0 auto;
 		width:864px;
+
+		.desktop {
+			display:block;
+		}
+
+		.mobile, .tablet, .bigscreen, .hdtv {
+			display:none;
+		}
 	}
-	
-	@import "desktop";
 }
+@import "desktop";
 /*MQ -> Big Screen*/
 /*12 columns*/
 @media only screen and (min-width: 1304px) {
@@ -64,10 +86,17 @@ body {
 		padding:0 auto;
 		margin:0 auto;
 		width:1172px;
+
+		.bigscreen {
+			display:block;
+		}
+
+		.mobile, .tablet, .desktop, .hdtv {
+			display:none;
+		}
 	}
-	
-	@import "bigscreen";
 }
+@import "bigscreen";
 /*MQ -> HDTV*/
 /*18 columns*/
 @media only screen and (min-width: 1938px) {
@@ -75,7 +104,14 @@ body {
 		padding:0 auto;
 		margin:0 auto;
 		width:1748px;
+
+		.hdtv {
+			display:block;
+		}
+
+		.mobile, .tablet, .desktop, .bigscreen {
+			display:none;
+		}
 	}
-	
-	@import "hdtv";
 }
+@import "hdtv";

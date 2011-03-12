@@ -152,15 +152,6 @@ body {
   margin: 0 auto;
   width: 288px;
 }
-body .mobile {
-  display: block;
-}
-body .tablet,
-body .desktop,
-body .bigscreen,
-body .hdtv {
-  display: none;
-}
 /*Mobile*//*MQ -> Tablets*/
 /*6 columns*/
 @media only screen and (min-width: 667px) {
@@ -168,15 +159,6 @@ body .hdtv {
     padding: 0 auto;
     margin: 0 auto;
     width: 576px;
-  }
-  body .tablet {
-    display: block;
-  }
-  body .mobile,
-  body .desktop,
-  body .bigscreen,
-  body .hdtv {
-    display: none;
   }
 }
 /*Tablet*/
@@ -191,15 +173,6 @@ body .hdtv {
     margin: 0 auto;
     width: 864px;
   }
-  body .desktop {
-    display: block;
-  }
-  body .mobile,
-  body .tablet,
-  body .bigscreen,
-  body .hdtv {
-    display: none;
-  }
 }
 /*Desktop*/
 @media only screen and (min-width: 985px) {
@@ -213,15 +186,6 @@ body .hdtv {
     margin: 0 auto;
     width: 1172px;
   }
-  body .bigscreen {
-    display: block;
-  }
-  body .mobile,
-  body .tablet,
-  body .desktop,
-  body .hdtv {
-    display: none;
-  }
 }
 /*Bigscreen*/
 @media only screen and (min-width: 1304px) {
@@ -234,15 +198,6 @@ body .hdtv {
     padding: 0 auto;
     margin: 0 auto;
     width: 1748px;
-  }
-  body .hdtv {
-    display: block;
-  }
-  body .mobile,
-  body .tablet,
-  body .desktop,
-  body .bigscreen {
-    display: none;
   }
 }
 /*HDTV*/

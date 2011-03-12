@@ -11,18 +11,6 @@ body {
   margin: 0 auto;
   width: 288px;
 }
-body .mobile {
-  display: block;
-}
-body .tablet,
-body .desktop,
-body .bigscreen,
-body .hdtv {
-  display: none;
-}
-@import "mobile.css";
-
-
 /*Mobile*//*MQ -> Tablets*/
 /*6 columns*/
 @media only screen and (min-width: 667px) {
@@ -31,19 +19,11 @@ body .hdtv {
     margin: 0 auto;
     width: 576px;
   }
-  body .tablet {
-    display: block;
-  }
-  body .mobile,
-  body .desktop,
-  body .bigscreen,
-  body .hdtv {
-    display: none;
-  }
 }
-@import "tablet.css";
-
-
+/*Tablet*/
+@media only screen and (min-width: 667px) {
+  
+}
 /*MQ -> Desktop*/
 /*9 columns*/
 @media only screen and (min-width: 985px) {
@@ -52,19 +32,11 @@ body .hdtv {
     margin: 0 auto;
     width: 864px;
   }
-  body .desktop {
-    display: block;
-  }
-  body .mobile,
-  body .tablet,
-  body .bigscreen,
-  body .hdtv {
-    display: none;
-  }
 }
-@import "desktop.css";
-
-
+/*Desktop*/
+@media only screen and (min-width: 985px) {
+  
+}
 /*MQ -> Big Screen*/
 /*12 columns*/
 @media only screen and (min-width: 1304px) {
@@ -73,19 +45,11 @@ body .hdtv {
     margin: 0 auto;
     width: 1172px;
   }
-  body .bigscreen {
-    display: block;
-  }
-  body .mobile,
-  body .tablet,
-  body .desktop,
-  body .hdtv {
-    display: none;
-  }
 }
-@import "bigscreen.css";
-
-
+/*Bigscreen*/
+@media only screen and (min-width: 1304px) {
+  
+}
 /*MQ -> HDTV*/
 /*18 columns*/
 @media only screen and (min-width: 1938px) {
@@ -94,14 +58,8 @@ body .hdtv {
     margin: 0 auto;
     width: 1748px;
   }
-  body .hdtv {
-    display: block;
-  }
-  body .mobile,
-  body .tablet,
-  body .desktop,
-  body .bigscreen {
-    display: none;
-  }
 }
-@import "hdtv.css";
+/*HDTV*/
+@media only screen and (min-width: 1938px) {
+  
+}
