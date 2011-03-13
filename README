@@ -19,6 +19,8 @@ Usage : Css
 All the files are separated and @imported in the style.css file. Of course it'll be a good idea to merge them when you're done.
 The names of the files are pretty straight forward and most of them contain comments.
 
+If Javascript is disabled, the mobile version will be served and with the mobile stylesheet, the responsive design to show HTML elements that can't be loaded with Lazy Loading. For simpler development, the base.css only contains import, but, as always, it's better to merge all the required files and minify them for production.
+
 
 Usage : Less
 ------------
