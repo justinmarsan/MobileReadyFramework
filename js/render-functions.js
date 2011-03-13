@@ -3,6 +3,8 @@ document.write('<link rel="stylesheet" href="css/style.css" type="text/css" medi
 
 
 var sizes = new Array();
+var loaded_sizes = new Array();
+var last_width = $(window).width();
 var width;
 
 //Initialization function
@@ -35,22 +37,40 @@ function render() {
 	renderFor(sizes);
 }
 
+function in_array(array, p_val) {
+    for(var i = 0, l = array.length; i < l; i++) {
+        if(array[i] == p_val) {
+            rowid = i;
+            return true;
+        }
+    }
+    return false;
+}
+
 //Call the rendering
 function renderFor(opt){
 	for (var i in a = opt){
-		$("body").lazyRender({label:a[i]});
+		if(!in_array(loaded_sizes,a[i])) {
+			loaded_sizes.push(a[i]);
+			$("body").lazyRender({label:a[i]});
+		}
 	}
 }
 
 //Does the whole process
 function showContent(){
 	renderInit();
-	render();
+	if(width != last_width) {
+		last_width = width;
+		render();
+	}
 }
 
 //Init an Interval
 //Change the delay the way you want to, 10 seconds seems nice to me, little delay but it's okay
-var renderInterval = setInterval("showContent()",10000);
+var renderInterval = setInterval("showContent()",1000);
 
 //Show the content
-showContent();
+renderInit();
+render();
+last_width = width;
