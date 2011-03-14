@@ -1,7 +1,3 @@
-//Add the complete stylesheet
-document.write('<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">');
-
-
 var sizes = new Array();
 var loaded_sizes = new Array();
 var last_width = $(window).width();
