@@ -3,6 +3,9 @@ var loaded_sizes = new Array();
 var last_width = $(window).width();
 var width;
 
+// Configuration
+var inherit = true; //set to false if you don't want inherited loading.
+
 //Initialization function
 function renderInit(){
 	width = $(window).width();
@@ -16,8 +19,8 @@ var versions = {
 	hdtv: 1938
 };
 
-//Set the rendering
-function render() {
+//Set the rendering wiht inherit = true;
+function inherit_render() {
 	if(width >= versions.tablet){
 		sizes.push('Tablet');
 	}
@@ -29,6 +32,23 @@ function render() {
 	}
 	if(width >= versions.hdtv){
 		sizes.push('Hdtv');
+	}
+	renderFor(sizes);
+}
+
+//Set the rendering wiht inherit = false;
+function specific_render() {
+	if(width >= versions.tablet){
+		sizes[0] = 'Tablet';
+	}
+	if(width >= versions.desktop){
+		sizes[0] = 'Desktop';
+	}
+	if(width >= versions.bigscreen){
+		sizes[0] = 'Bigscreen';
+	}
+	if(width >= versions.hdtv){
+		sizes[0] = 'Hdtv';
 	}
 	renderFor(sizes);
 }
@@ -58,7 +78,7 @@ function showContent(){
 	renderInit();
 	if(width != last_width) {
 		last_width = width;
-		render();
+		(inherit == true) ? inherit_render() : specific_render();
 	}
 }
 
@@ -68,5 +88,5 @@ var renderInterval = setInterval("showContent()",1000);
 
 //Show the content
 renderInit();
-render();
+(inherit == true) ? inherit_render() : specific_render();
 last_width = width;

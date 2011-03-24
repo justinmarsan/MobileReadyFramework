@@ -11,6 +11,15 @@
 	margin-left:10px;
 }
 
+/* .col(x) writes width, margin-left and margin-right for x as the number of columns */
+.p-col(@number: 1) {
+	@columns : 26%*@number;
+	@glitter : 7%*(@number - 1);
+	width: @columns+@glitter;
+	margin-right:3.5%;
+	margin-left:3.5%;
+}
+
 /* .col-padding(x) writes width, margin-left, margin-right, padding-left and padding-right for x as the number of columns */
 .col-padding(@number: 1) {
 	@columns : 76px*@number;
