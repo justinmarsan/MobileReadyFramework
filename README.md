@@ -47,9 +47,11 @@ If you're on Mac and like GUI applications more than commande line tools, I reco
 Usage : JS
 ----------
 
-The Html page by default includes JQuery from Google CDN (version needs to be updated) with a local fallback, Modernizr, LazyRender and lazy-functions.js
+Right now, I'm using jQuery and LazyRender to hide/show content based on the viewport's size... I'd like to change that and only use raw Javascript to avoid loading jQuery and a plugin, so this will be one of the next upgrade I will work on. In the meantime it's still working.
 
-Lazy-functions.js is the important file here, it makes sure that the content of your Html files will be showed when needed. It's also contains an Interval, feel free to change the delay to whatever you want, default being to 5 secondes (5000ms). You can also disable to interval, this way the content will not be updated automatically if the user resizes his browser.
+Some comments will be added so that you just have to un-comment if you want to use Modernizr, jQuery or HTML5Shiv.
+
+Lazy-functions.js is the important file here, it makes sure that the content of your Html files will be showed when needed. It's also contains an Interval, feel free to change the delay to whatever you want, default being to 10 secondes (10000ms). You can also disable to interval, this way the content will not be updated automatically if the user resizes his browser.
 
 
 By default the lazy loading will uncomment element inherently so in the Desktop version, the element loaded in the Tablet version will be loaded too. If you want to avoid this behavior, a variable have been added in render-functions.js (var inheritence), just turn it to false.
@@ -58,6 +60,9 @@ By default the lazy loading will uncomment element inherently so in the Desktop 
 To-do
 -----
 
+* Clean all the LESS files
+* Re-write the lazy loading code so that it doesn't need jQuery and a plugin
+* Add commented link to jQuery, Modernizr and HTML5Shiv
 
 Credits
 -------
