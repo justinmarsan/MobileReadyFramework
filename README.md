@@ -60,9 +60,7 @@ By default the lazy loading will uncomment element inherently so in the Desktop 
 To-do
 -----
 
-* Clean all the LESS files
 * Re-write the lazy loading code so that it doesn't need jQuery and a plugin
-* Add commented link to jQuery, Modernizr and HTML5Shiv
 
 Credits
 -------
