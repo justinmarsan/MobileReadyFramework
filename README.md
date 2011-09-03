@@ -1,34 +1,46 @@
 MobileReadyFramework
 ====================
 
-What is that?
--------------
+What is it?
+-----------
 
-MRF is a simple framework to make mobile ready websites. It's using CSS3 media-queries, JQuery, Lazy Loading, and is ready to be used with LESS (with few handy rules).
+So far, MRF has been a (dead project) uhm, an experiment, I was searching for a way to make cross devices websites with performances in mind... The result is a "big" framework, Javascript and CSS powered that will allow you (if you give it a try) to make websites loading content depending on the browser's size to avoid big files loading on mobile devices and poor quality graphics on bigger screens.
+
+The issue right now is that I feel it is too difficult to use, and does more than it should resulting in a huge pile of code. I'm now in the process of making it cleaner and simpler to use, and as soon as I'm happy with the result, I'll be working on a demo website to show it's power (assuming it has some...).
 
 
 Usage : Html
 ------------
 
-In order to prevent uneeded file loading, your html should only contain the Html elements needed for the mobile version. The elements used in the other version (Tablet, Desktop, Bigscreen, Hdtv) must be added between comments, see the demo.html file.
+These are classic HTML files, the only "new" thing is the code written in comments. This will be un-commented in JS so that only content you want to show is loaded in the visitor's device.
 
 
 Usage : Css
 -----------
 
-All the files are separated and @imported in the style.css file. Of course it'll be a good idea to merge them when you're done.
-The names of the files are pretty straight forward and most of them contain comments.
+I decided that trying to make it easy to use in "bare" CSS and LESS was simply too much work, and a bit pointless so thses files will simply be the raw exports LESS creates. If you want to use those, the only files you will have to work in are base.css and style.css
 
-If Javascript is disabled, the mobile version will be served and with the mobile stylesheet, the responsive design to show HTML elements that can't be loaded with Lazy Loading. For simpler development, the base.css only contains import, but, as always, it's better to merge all the required files and minify them for production.
+base.css is the file loaded "by default", it contains the reset, the mobile style and some more code such as third-party libraries.
+
+style.css is the complete one with media-queries, and all the device-specific styles.
 
 
 Usage : Less
 ------------
 
-The /less folder contains the same files then the /css folder with some mixins already included.
-For more informations see http://lesscss.org/
+If (like me) you like LESS, than you'll have the benefit of using separated files to code (while they will be exported in base.css and style.css automatically when compiling). The file names are pretty straight-forward, but here is a short list :
 
-If you use Less.app ( http://incident57.com/less/ Mac only) the style.css will already be production ready due to the import. Highly recommended thought not necessary
+base.less imports all the files needed for the base style loaded if JS isn't enabled, including reset, mobile and plugins.
+
+style.less imports all the files of the project including reset, plugin and all the size-specific stylesheets
+
+mobile.less tablet.less desktop.less bigscreen.less and hdtv.less are size-specific stylesheets and contains the media-queries to target the specified sizes.
+
+plugin.less contains the styles you may have to/want to use for third-party scripts such as a JQuery plugin.
+
+For more informations about LESS see http://lesscss.org/
+
+If you're on Mac and like GUI applications more than commande line tools, I recommend Less.app ( http://incident57.com/less/ Mac only) which is great and will allow you to use LESS simply without remembering command line stuff (cman, we all know designers prefer pretty simple things that work rather than the Terminal :p ).
 
 
 
