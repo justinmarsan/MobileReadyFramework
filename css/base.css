@@ -140,6 +140,7 @@ input, select {
 /********** MOBILE **********/
 /*** 
 	This is the base style for all devices and especially mobile phones.
+	There is no media-queries since this is the base styling that will be on devices with Javascript disabled, or with unsupported media-queries.
 ***/
 /********* / MOBILE *********/
 /********** PLUGINS **********/
