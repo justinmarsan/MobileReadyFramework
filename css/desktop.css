@@ -1,4 +1,8 @@
-/*Desktop*/
+/********** DESKTOP **********/
+/*** 
+	This file contains styles for devices larger than 985px
+***/
 @media only screen and (min-width: 985px) {
   
 }
+/********* / DESKTOP *********/
