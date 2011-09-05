@@ -148,6 +148,7 @@ input, select {
 /*** 
 	This file contains the styles for devices larger than 768px
 	748px wide; 12 columns; 44px columns; 20px gutters from 978.gs
+	The grid suggestions are only... suggestions, it's up to you to make yours yourself :)
 ***/
 @media only screen and (min-width: 768px) {
   
