@@ -57,6 +57,15 @@ Lazy-functions.js is the important file here, it makes sure that the content of 
 By default the lazy loading will uncomment element inherently so in the Desktop version, the element loaded in the Tablet version will be loaded too. If you want to avoid this behavior, a variable have been added in render-functions.js (var inheritence), just turn it to false.
 
 
+
+Usage : Design
+--------------
+
+The framework by default comes with pre-set media-queries and uses sizes from 978.gs for mobile.less tablet.less desktop.less and bigscreen.less... Unfortunately nothing was provided for bigger than that so I made hdtv.less's size myself.
+
+You can download templates for those layouts on www.978.gs
+
+
 To-do
 -----
 
