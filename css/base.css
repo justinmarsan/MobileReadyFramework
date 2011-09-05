@@ -141,6 +141,7 @@ input, select {
 /*** 
 	This is the base style for all devices and especially mobile phones.
 	There is no media-queries since this is the base styling that will be on devices with Javascript disabled, or with unsupported media-queries.
+	300px wide; 8 columns; 27px wide columns; 12px gutters; from 978.gs
 ***/
 /********* / MOBILE *********/
 /********** PLUGINS **********/
