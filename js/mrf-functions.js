@@ -1,5 +1,5 @@
 (function() {
-  var MRF, getComments, getDelay, getSizesToShow, makeReg, setNewScreenSizes, unComment;
+  var MRF, doMagic, getComments, getDelay, getSizesToShow, makeReg, setNewScreenSizes, unComment;
   MRF = new Object();
   MRF.settings = {
     inheritance: false,
@@ -124,8 +124,7 @@
     while (v.firstChild) {
       parent.insertBefore(v.firstChild, node);
     }
-    parent.removeChild(node);
-    return "ok";
+    return parent.removeChild(node);
   };
   getSizesToShow = function() {
     var a, c, i, s, sizes, x, _i, _len;
@@ -144,8 +143,19 @@
         }
       }
     }
-    return alert(sizes);
+    return sizes;
   };
-  setNewScreenSizes();
-  getSizesToShow();
+  doMagic = function() {
+    var c, comments, exp, _i, _len, _results;
+    setNewScreenSizes();
+    exp = getSizesToShow();
+    comments = getComments(exp);
+    _results = [];
+    for (_i = 0, _len = comments.length; _i < _len; _i++) {
+      c = comments[_i];
+      _results.push(unComment(c));
+    }
+    return _results;
+  };
+  doMagic();
 }).call(this);
