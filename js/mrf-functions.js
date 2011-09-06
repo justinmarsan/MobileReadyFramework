@@ -106,11 +106,10 @@
     return comments;
   };
   UnComment = function(node) {
-    var content, parent, v;
+    var parent, v;
     parent = node.parentNode;
     v = document.createElement("div");
-    content = node.nodeValue.replace(makeReg(), "");
-    v.innerHTML = content;
+    v.innerHTML = node.nodeValue.replace(makeReg(), "");
     while (v.firstChild) {
       parent.insertBefore(v.firstChild, node);
     }
