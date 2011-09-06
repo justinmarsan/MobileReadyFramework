@@ -1,5 +1,5 @@
 (function() {
-  var MRF, UnComment, getComments, getDelay, makeReg, setNewScreenSizes;
+  var MRF, getComments, getDelay, getSizesToShow, makeReg, setNewScreenSizes, unComment;
   MRF = new Object();
   MRF.settings = {
     inheritance: false,
@@ -116,7 +116,7 @@
     }
     return comments;
   };
-  UnComment = function(node) {
+  unComment = function(node) {
     var parent, v;
     parent = node.parentNode;
     v = document.createElement("div");
@@ -127,5 +127,25 @@
     parent.removeChild(node);
     return "ok";
   };
-  alert(makeReg(["Mobile", "Desktop"]));
+  getSizesToShow = function() {
+    var a, c, i, s, sizes, x, _i, _len;
+    sizes = [];
+    i = MRF.settings['inheritance'];
+    c = MRF.screensizes['current'];
+    s = MRF.sizes;
+    a = ['mobile', 'tablet', 'desktop', 'bigscreen', 'hdtv'];
+    for (_i = 0, _len = a.length; _i < _len; _i++) {
+      x = a[_i];
+      if (c > s[x]['size']) {
+        if (i) {
+          sizes.push(s[x]['label']);
+        } else {
+          sizes[0] = s[x]['label'];
+        }
+      }
+    }
+    return alert(sizes);
+  };
+  setNewScreenSizes();
+  getSizesToShow();
 }).call(this);
