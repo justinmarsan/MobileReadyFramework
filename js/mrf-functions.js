@@ -111,7 +111,10 @@
     v = document.createElement("div");
     content = node.nodeValue.replace(makeReg(), "");
     v.innerHTML = content;
-    alert("fuuuuuuuuuuuuuuuuuu");
+    while (v.firstChild) {
+      parent.insertBefore(v.firstChild, node);
+    }
+    parent.removeChild(node);
     return "ok";
   };
   _ref = getComments();
