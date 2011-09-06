@@ -1,5 +1,5 @@
 (function() {
-  var MRF, UnComment, c, getComments, getDelay, makeReg, setNewScreenSizes, _i, _len, _ref;
+  var MRF, UnComment, getComments, getDelay, makeReg, setNewScreenSizes;
   MRF = new Object();
   MRF.settings = {
     inheritance: false,
@@ -57,13 +57,24 @@
     }
   };
   makeReg = function(exp) {
-    var reg;
+    var i, reg, _ref;
     if (exp == null) {
       exp = "*";
     }
     reg = '^ ?(';
-    if (exp === "*") {
-      reg += MRF.sizes['mobile']['label'] + '|' + MRF.sizes['tablet']['label'] + '|' + MRF.sizes['desktop']['label'] + '|' + MRF.sizes['bigscreen']['label'] + '|' + MRF.sizes['hdtv']['label'];
+    if (typeof exp === "string") {
+      if (exp === "*") {
+        reg += MRF.sizes['mobile']['label'] + '|' + MRF.sizes['tablet']['label'] + '|' + MRF.sizes['desktop']['label'] + '|' + MRF.sizes['bigscreen']['label'] + '|' + MRF.sizes['hdtv']['label'];
+      } else {
+        reg += exp;
+      }
+    } else {
+      for (i = 0, _ref = exp.length - 1; 0 <= _ref ? i <= _ref : i >= _ref; 0 <= _ref ? i++ : i--) {
+        reg += exp[i];
+        if (i !== exp.length - 1) {
+          reg += "|";
+        }
+      }
     }
     reg += ')';
     return new RegExp(reg);
@@ -116,9 +127,5 @@
     parent.removeChild(node);
     return "ok";
   };
-  _ref = getComments();
-  for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-    c = _ref[_i];
-    UnComment(c);
-  }
+  alert(makeReg(["Mobile", "Desktop"]));
 }).call(this);
