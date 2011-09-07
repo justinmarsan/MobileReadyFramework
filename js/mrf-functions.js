@@ -1,11 +1,18 @@
 (function() {
-  var MRF, doMagic, getComments, getDelay, getSizesToShow, makeReg, setNewScreenSizes, unComment;
+  var MRF, debug, doMagic, getComments, getDelay, getSizesToShow, makeReg, setNewScreenSizes, sizesInherit, sizesNotInherit, unComment;
+  var __indexOf = Array.prototype.indexOf || function(item) {
+    for (var i = 0, l = this.length; i < l; i++) {
+      if (this[i] === item) return i;
+    }
+    return -1;
+  };
   MRF = new Object();
   MRF.settings = {
     inheritance: false,
     live: false,
     delay: 0,
     _delay: 500,
+    _delay_max: 5000,
     zone: "body"
   };
   MRF.sizes = {
@@ -31,13 +38,22 @@
     }
   };
   MRF.screensizes = {
-    current: 0,
-    previous: screen.width
+    current: document.width,
+    previous: document.width
   };
   MRF.loadedsizes = [];
+  MRF.timers = {
+    loop: null,
+    resize: null
+  };
   setNewScreenSizes = function() {
-    MRF.screensizes['previous'] = MRF.screensizes['current'];
-    return MRF.screensizes['current'] = screen.width;
+    if (MRF.screensizes['current'] !== document.width) {
+      MRF.screensizes['previous'] = MRF.screensizes['current'];
+      MRF.screensizes['current'] = document.width;
+      return true;
+    } else {
+      return false;
+    }
   };
   getDelay = function(change) {
     var a;
@@ -49,8 +65,8 @@
         return MRF.settings['_delay'] = 500;
       } else {
         a = MRF.settings['_delay'];
-        MRF.settings['_delay'] = MRF.settings['_delay'] * 1.5;
-        return a;
+        MRF.settings['_delay'] = MRF.settings['_delay'] * 1.2;
+        return a = a < MRF.settings['_delay_max'] ? Math.round(a) : MRF.settings['_delay_max'];
       }
     } else {
       return MRF.settings['delay'];
@@ -126,36 +142,67 @@
     }
     return parent.removeChild(node);
   };
-  getSizesToShow = function() {
-    var a, c, i, s, sizes, x, _i, _len;
+  sizesInherit = function() {
+    var a, s, sizes, _i, _len;
     sizes = [];
-    i = MRF.settings['inheritance'];
-    c = MRF.screensizes['current'];
-    s = MRF.sizes;
     a = ['mobile', 'tablet', 'desktop', 'bigscreen', 'hdtv'];
     for (_i = 0, _len = a.length; _i < _len; _i++) {
-      x = a[_i];
-      if (c > s[x]['size']) {
-        if (i) {
-          sizes.push(s[x]['label']);
-        } else {
-          sizes[0] = s[x]['label'];
-        }
+      s = a[_i];
+      if (MRF.screensizes['current'] >= MRF.sizes[s]['size']) {
+        sizes.push(MRF.sizes[s]['label']);
       }
     }
     return sizes;
   };
+  sizesNotInherit = function() {
+    var a, s, sizes, _i, _len;
+    sizes = [];
+    a = ['mobile', 'tablet', 'desktop', 'bigscreen', 'hdtv'];
+    for (_i = 0, _len = a.length; _i < _len; _i++) {
+      s = a[_i];
+      if (MRF.screensizes['current'] >= MRF.sizes[s]['size']) {
+        sizes[0] = MRF.sizes[s]['label'];
+      }
+    }
+    return sizes;
+  };
+  getSizesToShow = function() {
+    var sizes, t, t_sizes, _i, _len;
+    sizes = [];
+    if (MRF.settings['inheritance']) {
+      t_sizes = sizesInherit();
+    } else {
+      t_sizes = sizesNotInherit();
+    }
+    for (_i = 0, _len = t_sizes.length; _i < _len; _i++) {
+      t = t_sizes[_i];
+      if (__indexOf.call(MRF.loadedsizes, t) < 0) {
+        sizes.push(t);
+      }
+    }
+    debug(sizes);
+    return sizes;
+  };
   doMagic = function() {
-    var c, comments, exp, _i, _len, _results;
-    setNewScreenSizes();
+    var c, changed, comments, delay, e, exp, _i, _j, _len, _len2;
+    changed = setNewScreenSizes();
     exp = getSizesToShow();
     comments = getComments(exp);
-    _results = [];
     for (_i = 0, _len = comments.length; _i < _len; _i++) {
       c = comments[_i];
-      _results.push(unComment(c));
+      unComment(c);
     }
-    return _results;
+    for (_j = 0, _len2 = exp.length; _j < _len2; _j++) {
+      e = exp[_j];
+      MRF.loadedsizes.push(e);
+    }
+    delay = getDelay(changed);
+    if (MRF.loadedsizes.length < 5) {
+      return MRF.timers['loop'] = setTimeout(doMagic, delay);
+    }
+  };
+  debug = function(s) {
+    return document.getElementById('cont').innerHTML = s;
   };
   doMagic();
 }).call(this);
