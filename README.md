@@ -53,8 +53,6 @@ I know what you're thinking : "It's possible to show and hide content with CSS s
 
 So what mrf-functions.js does is allow you to make some code visible depending on the size of the screen, like I said, media-queries for HTML. To make it simpler, it's using the sizes already set in the CSS media-queries and some keywords so that you don't need to remember the numbers.
 
-*(longer explanations will be there soon)*
-
 
 
 Usage : Design
@@ -69,6 +67,77 @@ To-do
 -----
 
 * Make a great example showing how awesome this framework is
+
+
+Quick Tutorial
+==============
+
+This is a quick overview of how you can create cross-devices websites with different experiences, features and elements based on the viewport with MRF.
+
+Doing your design
+-----------------
+
+I won't go into details about how to design, this is up to you (or the person designing the website you're working on)... Here are few things you need to keep in mind :
+
+* Except the HDTV version (the largest one, > 2018px wide) all the templates can be found on http://978.gs if you want to use their pre-defined grids
+* The mobile version is the one that will be showed to mobile phones but also older browsers that don't support Media-Queries. It's better to make it fluid instead of fixed.
+* You are free to use different images with different sizes for each one of your designs, so don't limitate yourself or force you to re-use elements... you don't have to !
+* Of course you don't have to use all the pre-defined sizes
+
+
+Coding the mobile version
+-------------------------
+
+This is the first step of the coding process.
+
+The code of the mobile version will be in mobile.less (or base.css and style.css if you're not using LESS). There is not much specific here, just keep in mind that the smaller the files are the better, if you don't need to, don't load any JS framework or big images, we'll add that for bigger devices in the next step.
+
+
+Adding the bigger versions
+--------------------------
+
+This is now the fun part.
+
+In your markup, placce the elements you want to add in comments, starting with the name of the layout it must be showed for.
+
+	<!-- Desktop
+		<div id="test">This will appear if the visitor is using a desktop</div>
+	-->
+
+Resize your browser to the targeted size and style your page with it's old elements from the mobile version and the new ones for the desktop version. Here is a list of the different layouts :
+
+* Mobile (the default one)
+* Tablet
+* Desktop
+* Bigscreen
+* Hdtv
+
+
+Changes you can do
+------------------
+
+You can configure the MRF javascript functions to load content in 2 different way :
+
+* With inheritance : versions smaller or equals to the visitor's are loaded
+* Without inheritance : only the exact version is loaded
+
+(js/mrf-functions.js MRF.settings['inheritance'] true or false;)
+
+This will depend on how you want to code, if you're more about progressive ehancement, you will most likely want with inheritance, if you really create different versions for the different layouts than without might be simpler to manage for you.
+
+Of course, always keep in mind that a user *might* resize his browser several times and load various layouts on a single page, it is up to you to handle this the right way *(some classes are coming to help with that)*
+
+Another thing you can change is the delay between the checks of the browser size.
+
+To prevent the script for using too much ressources, the delay between each test gets longer if the size hasn't change. You can change that by setting the delay setting to the delay you want in millisecond. If you use your own value, than the time will always be the same even if no changes are found.
+
+(js/mrf-functions.js MRF.settings['delay'] 0 for auto or a number in ms)
+
+
+Questions and issues
+--------------------
+
+If you have a problem using MRF, an idea to make it better or anything, feel free to email me at hello@justinmarsa.com and I'll do my best to answer you as quick as I can.
 
 Credits
 -------
