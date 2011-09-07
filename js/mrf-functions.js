@@ -8,7 +8,7 @@
   };
   MRF = new Object();
   MRF.settings = {
-    inheritance: false,
+    inheritance: true,
     live: false,
     delay: 0,
     _delay: 500,
@@ -180,7 +180,6 @@
         sizes.push(t);
       }
     }
-    debug(sizes);
     return sizes;
   };
   doMagic = function() {

@@ -47,14 +47,13 @@ If you're on Mac and like GUI applications more than commande line tools, I reco
 Usage : JS
 ----------
 
-Right now, I'm using jQuery and LazyRender to hide/show content based on the viewport's size... I'd like to change that and only use raw Javascript to avoid loading jQuery and a plugin, so this will be one of the next upgrade I will work on. In the meantime it's still working.
+The JS probably is the only *really* new thing this framework provides... To put it simply, it brings media-queries to HTML.
 
-Some comments will be added so that you just have to un-comment if you want to use Modernizr, jQuery or HTML5Shiv.
+I know what you're thinking : "It's possible to show and hide content with CSS so what the point of it ?" Well the thing is, lots of browsers wil load content even if it's hidden in CSS, if it's a big image you wanted to use on desktop, chances are mobiles will load it too even if it doesn't appear, and this really sucks because mobile phones don't always have good internet connection, and it's useless bandwidth used.
 
-Lazy-functions.js is the important file here, it makes sure that the content of your Html files will be showed when needed. It's also contains an Interval, feel free to change the delay to whatever you want, default being to 10 secondes (10000ms). You can also disable to interval, this way the content will not be updated automatically if the user resizes his browser.
+So what mrf-functions.js does is allow you to make some code visible depending on the size of the screen, like I said, media-queries for HTML. To make it simpler, it's using the sizes already set in the CSS media-queries and some keywords so that you don't need to remember the numbers.
 
-
-By default the lazy loading will uncomment element inherently so in the Desktop version, the element loaded in the Tablet version will be loaded too. If you want to avoid this behavior, a variable have been added in render-functions.js (var inheritence), just turn it to false.
+*(longer explanations will be there soon)*
 
 
 
@@ -69,7 +68,7 @@ You can download templates for those layouts on www.978.gs
 To-do
 -----
 
-* Re-write the lazy loading code so that it doesn't need jQuery and a plugin
+* Make a great example showing how awesome this framework is
 
 Credits
 -------
@@ -78,7 +77,7 @@ Made by Justin Marsan ( www.justinmarsan.com )
 Original idea form Kahlil Lechelt ( http://kahlillechelt.com/ )
 Discussion on Forrst ( http://forrst.com/posts/Perfect_All_Around_Bullet_Proof_CSS_Framework_F-gj4 )
 JQuery ( www.jquery.com )
-LazyRender ( http://webbricks.org/bricks/jQuery.lazyRender/ )
+LazyRender ( http://webbricks.org/bricks/jQuery.lazyRender/ ) *this isn't used anymore but have been a good ressource to help me code the actual (raw) JS lazy loading functions*
 
 
 License

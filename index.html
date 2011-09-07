@@ -15,19 +15,21 @@
 	<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 	<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 		
-		<!--  Page -->
+		<!--  Your Code -->
 			
-		<!-- /Page -->
+		<!-- /Your Code -->
 		
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	<script>!window.jQuery && document.write('<script src="js/jquery-1.6.2.min.js"><\/script>')</script>
+	<!-- add complete stylesheet and MRF js script if MQ are supported -->
 	<script src="js/modernizr-2.0.6.min.js"></script>
-	
-	<!-- add complete stylesheet, LazyRender and MRF js script if MQ are supported -->
 	<script type="text/javascript" charset="utf-8">
 		if(Modernizr.mq('(min-width: 0px)')) {
-			document.write('<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8"><script src="js/lazy-render.js" type="text/javascript" charset="utf-8"><\/script><script src="js/render-functions.js?v=0000"><\/script>');
+			document.write('<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8"><script src="js/mrf-functions.js?v=0000"><\/script>');
 		}
 	</script>
+	
+	<!-- JQuery
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="js/jquery-1.6.2.min.js"><\/script>')</script>
+	-->
 	</body>
 </html>
