@@ -1,6 +1,15 @@
 MobileReadyFramework
 ====================
 
+NOT MAINTAINED ANYMORE
+----------------------
+
+As it turns out, most browsers including on mobile devices are now more effiscient at only loading needed assets, making the whole purpose of this framework pointless. It will only makes the frontend work more difficult without much benefits.
+
+The repository is left, feel free to fork it and eventually send pull requests, but from now on I don't intend on spending more time on it as it's providing a solution to a problem that no longer exists.
+
+Thank you.
+
 What is it?
 -----------
 
@@ -61,12 +70,6 @@ Usage : Design
 The framework by default comes with pre-set media-queries and uses sizes from 978.gs for mobile.less tablet.less desktop.less and bigscreen.less... Unfortunately nothing was provided for bigger than that so I made hdtv.less's size myself.
 
 You can download templates for those layouts on www.978.gs
-
-
-To-do
------
-
-* Make a great example showing how awesome this framework is
 
 
 Quick Tutorial
