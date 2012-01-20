@@ -1,14 +1,9 @@
 MobileReadyFramework
 ====================
 
-NOT MAINTAINED ANYMORE
-----------------------
+For a moment I thought browsers found a solution to this issues... I did some more tests, and it turns out they didn't really did. So I'm getting back on this project as I need to do some mobile websites again.
 
-As it turns out, most browsers including on mobile devices are now more effiscient at only loading needed assets, making the whole purpose of this framework pointless. It will only makes the frontend work more difficult without much benefits.
-
-The repository is left, feel free to fork it and eventually send pull requests, but from now on I don't intend on spending more time on it as it's providing a solution to a problem that no longer exists.
-
-Thank you.
+Here is a post about my findings at the moment. I didn't get to try all the possibilites yet but it looks like a lot of images get downloaded for no reason and that sucks.
 
 What is it?
 -----------
